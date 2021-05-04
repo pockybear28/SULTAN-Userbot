@@ -308,12 +308,12 @@ async def amireallyalive(alive):
     output = (
         f"**[Man-Userbot](https://github.com/mrismanaziz/Man-Userbot) is Up and Running.**\n\n"
         f"__**{ALIVE_TEKS_CUSTOM}**__\n\n"
-        f"⚡️ Master : `{DEFAULTUSER} \n"
-        f"⚡️ Modules : `{len(modules)} Modules \n"
-        f"⚡️ Bot Version : `{BOT_VER} \n"
-        f"⚡️ Python Version : `Ver {python_version()} \n"
-        f"⚡️ Telethon Version : `Ver {version.__version__} \n"
-        f"⚡️ Bot Uptime : `{uptime} \n"
+        f"⚡️ **Master :** `{DEFAULTUSER}` \n"
+        f"⚡️ **Modules :** `{len(modules)} Modules` \n"
+        f"⚡️ **Bot Version :** `{BOT_VER}` \n"
+        f"⚡️ **Python Version :** `Ver {python_version()}` \n"
+        f"⚡️ **Telethon Version :** `Ver {version.__version__}` \n"
+        f"⚡️ **Bot Uptime :** `{uptime}` \n"
     )
     if ALIVE_LOGO:
         try:
