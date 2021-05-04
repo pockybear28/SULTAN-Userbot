@@ -311,8 +311,8 @@ async def amireallyalive(alive):
         f"⚡️ **Master :** `{DEFAULTUSER}` \n"
         f"⚡️ **Modules :** `{len(modules)} Modules` \n"
         f"⚡️ **Bot Version :** `{BOT_VER}` \n"
-        f"⚡️ **Python Version :** `Ver {python_version()}` \n"
-        f"⚡️ **Telethon Version :** `Ver {version.__version__}` \n"
+        f"⚡️ **Python Version :** `{python_version()}` \n"
+        f"⚡️ **Telethon Version :** `{version.__version__}` \n"
         f"⚡️ **Bot Uptime :** `{uptime}` \n"
     )
     if ALIVE_LOGO:
