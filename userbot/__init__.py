@@ -386,6 +386,9 @@ def paginate_help(page_number, loaded_modules, prefix):
                     "««", data="{}_prev({})".format(prefix, modulo_page)
                 ),
                 custom.Button.inline(
+                    '✗', b'close'
+                ),
+                custom.Button.inline(
                     "»»", data="{}_next({})".format(prefix, modulo_page)
                 )
             )
@@ -408,20 +411,15 @@ with bot:
 
         @tgbot.on(events.NewMessage(pattern="/start"))
         async def handler(event):
-            await event.message.get_sender()
+            sender = await event.message.get_sender()
             text = (
-                f"**Hey**, __I am using__ 🔥 **Man-Userbot** 🔥\n\n"
-                f"      __Thanks For Using me__\n\n"
-                f"✣ **Userbot Version :** `{BOT_VER}@{UPSTREAM_REPO_BRANCH}`\n"
-                f"✣ **Group Support :** [Sharing Userbot](t.me/sharinguserbot)\n"
-                f"✣ **Owner Repo :** [Risman](t.me/mrismanaziz)\n"
-                f"✣ **Repo :** [Man-Userbot](https://github.com/mrismanaziz/Man-Userbot)\n")
+                f"Hai {sender.first_name}\nSaya adalah bot assisten {ALIVE_NAME}\n\nSaya adalah [Man-Userbot](https://github.com/mrismanaziz/Man-Userbot) modules helper...\nSilahkan Buat Userbot Anda sendiri, Jangan Menggunakan")
             await tgbot.send_file(event.chat_id, logo, caption=text,
                                   buttons=[
                                       [
                                           Button.url(
                                               text="⛑ Group Support ⛑",
-                                              url="https://t.me/Sharing Userbot"
+                                              url="https://t.me/SharingUserbot"
                                           )
                                       ]
                                   ]
