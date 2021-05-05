@@ -413,12 +413,12 @@ with bot:
         async def handler(event):
             sender = await event.message.get_sender()
             text = (
-                f"Hai {sender.first_name}\nSaya adalah bot assisten {ALIVE_NAME}\n\nSaya adalah [Man-Userbot](https://github.com/mrismanaziz/Man-Userbot) modules helper...\nplease make your own bot, don't use mine")
+                f"**Hey**, __I am using__ 🔥 **Man-Userbot** 🔥\n\n"f"      __Thanks For Using me__\n\n"f"✣ **Userbot Version :** `{BOT_VER}@{UPSTREAM_REPO_BRANCH}`\n"f"✣ **Group Support :** [Sharing Userbot](t.me/sharinguserbot)\n"f"✣ **Owner Repo :** [Risman](t.me/mrismanaziz)\n"f"✣ **Repo :** [Man-Userbot](https://github.com/mrismanaziz/Man-Userbot)\n")
             await tgbot.send_file(event.chat_id, logo, caption=text,
                                   buttons=[
                                       [
                                           custom.Button.url(
-                                              text="🔱 Group Support 🔱",
+                                              text="⛑ Group Support ⛑",
                                               url="https://t.me/SharingUserbot"
                                           )
                                       ]
@@ -495,7 +495,8 @@ with bot:
 
         @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
         async def close(event):
-            await event.edit("Help Mode Button Ditutup!")
+            await event.edit("Help Mode Button Ditutup!",
+            buttons=Button.inline("Oᴘᴇɴ Mᴀɪɴ Mᴇɴᴜ Aɢᴀɪɴ", data="{}_prev({})".format(prefix, modulo_page),)
             await event.delete()
 
         @tgbot.on(
