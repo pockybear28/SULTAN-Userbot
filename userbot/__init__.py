@@ -368,8 +368,8 @@ def paginate_help(page_number, loaded_modules, prefix):
     helpable_modules = sorted(helpable_modules)
     modules = [
         custom.Button.inline(
-    "{} {} ✘".format(
-        "✘", x), data="ub_modul_{}".format(x))
+            "{} {} ✘".format(
+                "✘", x), data="ub_modul_{}".format(x))
         for x in helpable_modules
     ]
     pairs = list(zip(modules[::number_of_cols],
@@ -413,9 +413,14 @@ with bot:
 
         @tgbot.on(events.NewMessage(pattern="/start"))
         async def handler(event):
-            sender = await event.message.get_sender()
+            await event.message.get_sender()
             text = (
-                f"**Hey**, __I am using__ 🔥 **Man-Userbot** 🔥\n\n"f"      __Thanks For Using me__\n\n"f"✣ **Userbot Version :** `{BOT_VER}@{UPSTREAM_REPO_BRANCH}`\n"f"✣ **Group Support :** [Sharing Userbot](t.me/sharinguserbot)\n"f"✣ **Owner Repo :** [Risman](t.me/mrismanaziz)\n"f"✣ **Repo :** [Man-Userbot](https://github.com/mrismanaziz/Man-Userbot)\n")
+                f"**Hey**, __I am using__ 🔥 **Man-Userbot** 🔥\n\n"
+                f"      __Thanks For Using me__\n\n"
+                f"✣ **Userbot Version :** `{BOT_VER}@{UPSTREAM_REPO_BRANCH}`\n"
+                f"✣ **Group Support :** [Sharing Userbot](t.me/sharinguserbot)\n"
+                f"✣ **Owner Repo :** [Risman](t.me/mrismanaziz)\n"
+                f"✣ **Repo :** [Man-Userbot](https://github.com/mrismanaziz/Man-Userbot)\n")
             await tgbot.send_file(event.chat_id, logo, caption=text,
                                   buttons=[
                                       [
@@ -507,15 +512,15 @@ with bot:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:  # pylint:disable=E0602
-                current_page_number=int(
+                current_page_number = int(
                     event.data_match.group(1).decode("UTF-8"))
-                buttons=paginate_help(
+                buttons = paginate_help(
                     current_page_number - 1, dugmeler, "helpme"  # pylint:disable=E0602
                 )
                 # https://t.me/TelethonChat/115200
                 await event.edit(buttons=buttons)
             else:
-                reply_pop_up_alert=f"Harap Deploy Userbot Sendiri, Jangan Menggunakan Milik {ALIVE_NAME}"
+                reply_pop_up_alert = f"Harap Deploy Userbot Sendiri, Jangan Menggunakan Milik {ALIVE_NAME}"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @ tgbot.on(
@@ -525,11 +530,11 @@ with bot:
         )
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid:  # pylint:disable=E0602
-                modul_name=event.data_match.group(1).decode("UTF-8")
+                modul_name = event.data_match.group(1).decode("UTF-8")
 
-                cmdhel=str(CMD_HELP[modul_name])
+                cmdhel = str(CMD_HELP[modul_name])
                 if len(cmdhel) > 150:
-                    help_string=(
+                    help_string = (
                         str(CMD_HELP[modul_name]).replace(
                             '`', '')[:150] + "..."
                         + "\n\nBaca Teks Berikutnya Ketik .help "
@@ -537,9 +542,9 @@ with bot:
                         + " "
                     )
                 else:
-                    help_string=str(CMD_HELP[modul_name]).replace('`', '')
+                    help_string = str(CMD_HELP[modul_name]).replace('`', '')
 
-                reply_pop_up_alert=(
+                reply_pop_up_alert = (
                     help_string
                     if help_string is not None
                     else "{} No document has been written for module.".format(
@@ -547,7 +552,7 @@ with bot:
                     )
                 )
             else:
-                reply_pop_up_alert=f"Harap Deploy Userbot Sendiri, Jangan Menggunakan Milik {ALIVE_NAME}"
+                reply_pop_up_alert = f"Harap Deploy Userbot Sendiri, Jangan Menggunakan Milik {ALIVE_NAME}"
 
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
