@@ -408,9 +408,14 @@ with bot:
 
         @tgbot.on(events.NewMessage(pattern="/start"))
         async def handler(event):
-            sender = await event.message.get_sender()
+            await event.message.get_sender()
             text = (
-                f"**Hey**, __I am using__ 🔥 **Man-Userbot** 🔥\n\n"f"      __Thanks For Using me__\n\n"f"✣ **Userbot Version :** `{BOT_VER}@{UPSTREAM_REPO_BRANCH}`\n"f"✣ **Group Support :** [Sharing Userbot](t.me/sharinguserbot)\n"f"✣ **Owner Repo :** [Risman](t.me/mrismanaziz)\n"f"✣ **Repo :** [Man-Userbot](https://github.com/mrismanaziz/Man-Userbot)\n")
+                f"**Hey**, __I am using__ 🔥 **Man-Userbot** 🔥\n\n"
+                f"      __Thanks For Using me__\n\n"
+                f"✣ **Userbot Version :** `{BOT_VER}@{UPSTREAM_REPO_BRANCH}`\n"
+                f"✣ **Group Support :** [Sharing Userbot](t.me/sharinguserbot)\n"
+                f"✣ **Owner Repo :** [Risman](t.me/mrismanaziz)\n"
+                f"✣ **Repo :** [Man-Userbot](https://github.com/mrismanaziz/Man-Userbot)\n")
             await tgbot.send_file(event.chat_id, logo, caption=text,
                                   buttons=[
                                       [
