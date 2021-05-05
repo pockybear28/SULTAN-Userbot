@@ -315,7 +315,7 @@ async def amireallyalive(alive):
         f"⚡️ **Telethon Version :** `{version.__version__}` \n"
         f"⚡️ **Bot Uptime :** `{uptime}` \n\n"
         "    <a href = https://t.me/SharingUserbot><b>Support</b></a> | <a href = https://t.me/Lunatic0de><b>Channel</b></a> | <a href = https://t.me/mrismanaziz><b>Owner</b></a>",
-        parse_mode="html",
+            parse_mode="html",
     )
     if ALIVE_LOGO:
         try:
