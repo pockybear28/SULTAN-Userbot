@@ -313,7 +313,8 @@ async def amireallyalive(alive):
         f"⚡️ **Bot Version :** `{BOT_VER}` \n"
         f"⚡️ **Python Version :** `{python_version()}` \n"
         f"⚡️ **Telethon Version :** `{version.__version__}` \n"
-        f"⚡️ **Bot Uptime :** `{uptime}` \n"
+        f"⚡️ **Bot Uptime :** `{uptime}` \n\n"
+        "    **[Support](https://t.me/sharinguserbot) | [Channel](https://t.me/Lunatic0de) | [Owner](t.me/mrismanaziz)**"
     )
     if ALIVE_LOGO:
         try:
