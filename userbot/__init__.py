@@ -417,7 +417,7 @@ with bot:
             await tgbot.send_file(event.chat_id, logo, caption=text,
                                   buttons=[
                                       [
-                                          Button.url(
+                                          custom.Button.url(
                                               text="🔱 Group Support 🔱",
                                               url="https://t.me/SharingUserbot"
                                           )
