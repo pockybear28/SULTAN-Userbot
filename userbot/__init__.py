@@ -497,13 +497,7 @@ with bot:
 
         @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
         async def close(event):
-            await event.edit("Help Mode Button Ditutup!",
-            buttons=Button.inline(
-    "Oᴘᴇɴ Mᴀɪɴ Mᴇɴᴜ Aɢᴀɪɴ",
-    data="{}_prev({})".format(
-        prefix,
-        modulo_page),
-        )
+            await event.edit("Help Mode Button Ditutup!")
             await event.delete()
 
         @ tgbot.on(
