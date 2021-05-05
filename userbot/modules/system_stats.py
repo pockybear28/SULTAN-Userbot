@@ -21,6 +21,7 @@ import psutil
 from telethon import __version__, version
 
 from userbot import (
+    ALIVE_EMOJI,
     ALIVE_LOGO,
     ALIVE_NAME,
     ALIVE_TEKS_CUSTOM,
@@ -308,14 +309,13 @@ async def amireallyalive(alive):
     output = (
         f"**[Man-Userbot](https://github.com/mrismanaziz/Man-Userbot) is Up and Running.**\n\n"
         f"__**{ALIVE_TEKS_CUSTOM}**__\n\n"
-        f"⚡️ **Master :** `{DEFAULTUSER}` \n"
-        f"⚡️ **Modules :** `{len(modules)} Modules` \n"
-        f"⚡️ **Bot Version :** `{BOT_VER}` \n"
-        f"⚡️ **Python Version :** `{python_version()}` \n"
-        f"⚡️ **Telethon Version :** `{version.__version__}` \n"
-        f"⚡️ **Bot Uptime :** `{uptime}` \n\n"
-        "    <a href = https://t.me/SharingUserbot><b>Support</b></a> | <a href = https://t.me/Lunatic0de><b>Channel</b></a> | <a href = https://t.me/mrismanaziz><b>Owner</b></a>",
-            parse_mode="html",
+        f"{ALIVE_EMOJI} **Master :** `{DEFAULTUSER}` \n"
+        f"{ALIVE_EMOJI} **Modules :** `{len(modules)} Modules` \n"
+        f"{ALIVE_EMOJI} **Bot Version :** `{BOT_VER}` \n"
+        f"{ALIVE_EMOJI} **Python Version :** `{python_version()}` \n"
+        f"{ALIVE_EMOJI} **Telethon Version :** `{version.__version__}` \n"
+        f"{ALIVE_EMOJI} **Bot Uptime :** `{uptime}` \n\n"
+        "    **[Support](https://t.me/sharinguserbot)** | **[Channel](https://t.me/Lunatic0de)** | **[Owner](t.me/mrismanaziz)**"
     )
     if ALIVE_LOGO:
         try:
