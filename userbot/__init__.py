@@ -386,7 +386,7 @@ def paginate_help(page_number, loaded_modules, prefix):
                     "««", data="{}_prev({})".format(prefix, modulo_page)
                 ),
                 custom.Button.inline(
-                    '✗', b'close'
+                    'Tutup', b'close'
                 ),
                 custom.Button.inline(
                     "»»", data="{}_next({})".format(prefix, modulo_page)
@@ -407,18 +407,18 @@ with bot:
         dugmeler = CMD_HELP
         me = bot.get_me()
         uid = me.id
-        logo = "https://telegra.ph/file/9dc4e335feaaf6a214818.jpg"
+        logo = "https://telegra.ph/file/099b2bf1c3256847946bf.mp4"
 
         @tgbot.on(events.NewMessage(pattern="/start"))
         async def handler(event):
             sender = await event.message.get_sender()
             text = (
-                f"Hai {sender.first_name}\nSaya adalah bot assisten {ALIVE_NAME}\n\nSaya adalah [Man-Userbot](https://github.com/mrismanaziz/Man-Userbot) modules helper...\nSilahkan Buat Userbot Anda sendiri, Jangan Menggunakan")
+                f"Hai {sender.first_name}\nSaya adalah bot assisten {ALIVE_NAME}\n\nSaya adalah [Man-Userbot](https://github.com/mrismanaziz/Man-Userbot) modules helper...\nplease make your own bot, don't use mine")
             await tgbot.send_file(event.chat_id, logo, caption=text,
                                   buttons=[
                                       [
                                           Button.url(
-                                              text="⛑ Group Support ⛑",
+                                              text="🔱 Group Support 🔱",
                                               url="https://t.me/SharingUserbot"
                                           )
                                       ]
@@ -493,9 +493,10 @@ with bot:
                 reply_pop_up_alert = f"Harap Deploy Userbot Sendiri, Jangan Menggunakan Milik {ALIVE_NAME}"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @tgbot.on(events.CallbackQuery(data=b'close'))
+        @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
         async def close(event):
-            await event.edit("Help Mode Button Ditutup!", buttons=Button.clear())
+            await event.edit("Help Mode Button Ditutup!")
+            await event.delete()
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
