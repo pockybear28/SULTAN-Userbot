@@ -1,19 +1,15 @@
 import json
 from json.decoder import JSONDecodeError
 
-from userbot import bot
 from aiohttp import web
 from aiohttp.http_websocket import WSMsgType
-
 from telethon.tl.functions.channels import GetFullChannelRequest as getchat
+from telethon.tl.functions.phone import DiscardGroupCallRequest as stopvc
 from telethon.tl.functions.phone import GetGroupCallRequest as getvc
 from telethon.tl.functions.phone import JoinGroupCallRequest as joinvc
-from telethon.tl.functions.phone import CreateGroupCallRequest as startvc
-from telethon.tl.functions.phone import DiscardGroupCallRequest as stopvc
-from telethon.tl.functions.phone import InviteToGroupCallRequest as invitetovc
 from telethon.tl.types import DataJSON
 
-from userbot import CMD_HELP
+from userbot import CMD_HELP, bot
 from userbot.events import register
 
 
@@ -58,8 +54,7 @@ async def join_call(data):
         full_chat = await bot(getchat(chat))
     except ValueError:
         stree = (await bot.get_me()).first_name
-        return await data.edit(f"`Silakan tambahkan {stree} di grup ini.`"
-                               )
+        return await data.edit(f"`Silakan tambahkan {stree} di grup ini.`")
     except Exception as ex:
         return await data.edit("`" + str(ex) + "`")
     try:
@@ -95,8 +90,9 @@ async def join_call(data):
                 ),
             ),
         )
-        await data.edit(f"`Bergabung dengan Obrolan Suara di {(await bot.get_entity(data.chat_id)).title}`",
-                        )
+        await data.edit(
+            f"`Bergabung dengan Obrolan Suara di {(await bot.get_entity(data.chat_id)).title}`",
+        )
     except Exception as ex:
         return await data.edit("`" + str(ex) + "`")
 
