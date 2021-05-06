@@ -305,13 +305,13 @@ else:
 async def check_botlog_chatid():
     if not BOTLOG_CHATID and LOGSPAMMER:
         LOGS.info(
-            "You must set up the BOTLOG_CHATID variable in the config.env or environment variables, for the private error log storage to work."
+            "Anda harus menambahkan var BOTLOG_CHATID di config.env atau di var heroku, agar penyimpanan log error userbot pribadi berfungsi."
         )
         quit(1)
 
     elif not BOTLOG_CHATID and BOTLOG:
         LOGS.info(
-            "You must set up the BOTLOG_CHATID variable in the config.env or environment variables, for the userbot logging feature to work."
+            "Anda harus menambahkan var BOTLOG_CHATID di config.env atau di var heroku, agar fitur logging userbot berfungsi."
         )
         quit(1)
 
@@ -321,8 +321,8 @@ async def check_botlog_chatid():
     entity = await bot.get_entity(BOTLOG_CHATID)
     if entity.default_banned_rights.send_messages:
         LOGS.info(
-            "Your account doesn't have rights to send messages to BOTLOG_CHATID "
-            "group. Check if you typed the Chat ID correctly.")
+            "Akun Anda tidak bisa mengirim pesan ke BOTLOG_CHATID "
+            "Periksa apakah Anda memasukan ID grup dengan benar.")
         quit(1)
 
 
@@ -331,8 +331,9 @@ with bot:
         bot.loop.run_until_complete(check_botlog_chatid())
     except BaseException:
         LOGS.info(
-            "BOTLOG_CHATID environment variable isn't a "
-            "valid entity. Check your environment variables/config.env file.")
+            "var BOTLOG_CHATID kamu belum di isi."
+            "Buatlah grup telegram dan masukan bot @MissRose_bot lalu ketik /id"
+            "Masukan id grup nya di var BOTLOG_CHATID")
         quit(1)
 
 
@@ -345,8 +346,9 @@ with bot:
         bot.loop.run_until_complete(check_alive())
     except BaseException:
         LOGS.info(
-            "BOTLOG_CHATID environment variable isn't a "
-            "valid entity. Check your environment variables/config.env file.")
+            "var BOTLOG_CHATID kamu belum di isi."
+            "Buatlah grup telegram dan masukan bot @MissRose_bot lalu ketik /id"
+            "Masukan id grup nya di var BOTLOG_CHATID")
         quit(1)
 
 # Global Variables
@@ -409,7 +411,7 @@ with bot:
         dugmeler = CMD_HELP
         me = bot.get_me()
         uid = me.id
-        logo = "https://telegra.ph/file/099b2bf1c3256847946bf.mp4"
+        logo = "https://telegra.ph/file/9dc4e335feaaf6a214818.jpg"
 
         @tgbot.on(events.NewMessage(pattern="/start"))
         async def handler(event):
@@ -547,7 +549,7 @@ with bot:
                 reply_pop_up_alert = (
                     help_string
                     if help_string is not None
-                    else "{} No document has been written for module.".format(
+                    else "{} Tidak ada dokumen yang telah ditulis untuk modul.".format(
                         modul_name
                     )
                 )
@@ -558,13 +560,15 @@ with bot:
 
     except BaseException:
         LOGS.info(
-            "Mode Inline Bot Mu Nonaktif. "
-            "Untuk Mengaktifkan Pergi Ke @BotFather, lalu settings bot > pilih mode inline > Turn On. ")
+            "Help Mode Inline Bot Mu Tidak aktif. Tidak di aktifkan juga tidak apa-apa"
+            "Untuk Mengaktifkannya Buat bot di @BotFather Lalu Tambahkan var BOT_TOKEN dan BOT_USERNAME."
+            "Pergi Ke @BotFather lalu settings bot » Pilih mode inline » Turn On. ")
     try:
         bot.loop.run_until_complete(check_botlog_chatid())
     except BaseException:
         LOGS.info(
-            "BOTLOG_CHATID environment variable isn't a "
-            "valid entity. Check your environment variables/config.env file."
+            "var BOTLOG_CHATID kamu belum di isi."
+            "Buatlah grup telegram dan masukan bot @MissRose_bot lalu ketik /id"
+            "Masukan id grup nya di var BOTLOG_CHATID"
         )
         quit(1)
