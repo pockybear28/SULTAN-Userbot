@@ -569,6 +569,5 @@ with bot:
         LOGS.info(
             "var BOTLOG_CHATID kamu belum di isi."
             "Buatlah grup telegram dan masukan bot @MissRose_bot lalu ketik /id"
-            "Masukan id grup nya di var BOTLOG_CHATID"
-        )
+            "Masukan id grup nya di var BOTLOG_CHATID")
         quit(1)
