@@ -1,8 +1,8 @@
 try:
-    from userbot.modules.sql_helper import SESSION, BASE
+    from userbot.modules.sql_helper import BASE, SESSION
 except ImportError:
     raise AttributeError
-from sqlalchemy import Column, UnicodeText, Numeric, String
+from sqlalchemy import Column, Numeric, String, UnicodeText
 
 
 class Filters(BASE):
@@ -20,8 +20,10 @@ class Filters(BASE):
 
     def __eq__(self, other):
         return bool(
-            isinstance(other, Filters) and self.chat_id == other.chat_id
-            and self.keyword == other.keyword)
+            isinstance(other, Filters)
+            and self.chat_id == other.chat_id
+            and self.keyword == other.keyword
+        )
 
 
 Filters.__table__.create(checkfirst=True)
@@ -36,8 +38,7 @@ def get_filter(chat_id, keyword):
 
 def get_filters(chat_id):
     try:
-        return SESSION.query(Filters).filter(
-            Filters.chat_id == str(chat_id)).all()
+        return SESSION.query(Filters).filter(Filters.chat_id == str(chat_id)).all()
     finally:
         SESSION.close()
 
@@ -49,22 +50,20 @@ def add_filter(chat_id, keyword, reply, f_mesg_id):
         SESSION.add(adder)
         SESSION.commit()
         return True
-    else:
-        rem = SESSION.query(Filters).get((str(chat_id), keyword))
-        SESSION.delete(rem)
-        SESSION.commit()
-        adder = Filters(str(chat_id), keyword, reply, f_mesg_id)
-        SESSION.add(adder)
-        SESSION.commit()
-        return False
+    rem = SESSION.query(Filters).get((str(chat_id), keyword))
+    SESSION.delete(rem)
+    SESSION.commit()
+    adder = Filters(str(chat_id), keyword, reply, f_mesg_id)
+    SESSION.add(adder)
+    SESSION.commit()
+    return False
 
 
 def remove_filter(chat_id, keyword):
     to_check = get_filter(chat_id, keyword)
     if not to_check:
         return False
-    else:
-        rem = SESSION.query(Filters).get((str(chat_id), keyword))
-        SESSION.delete(rem)
-        SESSION.commit()
-        return True
+    rem = SESSION.query(Filters).get((str(chat_id), keyword))
+    SESSION.delete(rem)
+    SESSION.commit()
+    return True
