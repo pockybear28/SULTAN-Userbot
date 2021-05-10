@@ -158,23 +158,14 @@ async def typewriter(typew):
 async def koc(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit("`KAMIII ADALAHHH AVANGERS FAMILY`")
-        sleep(1)
         await e.edit("`SEPEEERTIIIII INILAH FAMILY KAMIIIII`")
-        sleep(1)
         await e.edit("`BERBAGAI BENTUK WATAK ORANGNYA
-        sleep(1)
         await e.edit("`ADA YANG LUCU `")
-        sleep(1)
         await e.edit("`ADA PULA MACAM BABIIII`")
-        sleep(1)
         await e.edit("`WALAAUUUU BEGITU KAMI SELALU KOMPAK`")
-        sleep(1)
         await e.edit("`KALAU GABUUTTTT`")
-        sleep(1)
         await e.edit("`PALING NGERUSUH`")
-        sleep(1)
         await e.edit("`ITULAH KAMI PARA AVENGERS`")
-        sleep(1)
         await e.edit("🙈🙈🙈🙈")
         await e.edit("🙉🙉🙉🙉")
         await e.edit("🙈🙈🙈🙈")
