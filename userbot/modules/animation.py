@@ -56,6 +56,7 @@ async def _(event):
             "Zeen si kembaran dyka",
             "Billa si cewe jutek",
             "Lucifer si cowo beatbox",
+            "Ayya si bocil bawel",
             "Sekian dari kami, makasih",
 
         ]
@@ -99,7 +100,7 @@ async def koc(e):
 @register(outgoing=True, pattern=r"^\.sultan(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
-    await typew.edit("`SUL SULLLL.....`")
+    await typew.edit("`TAN TAANNNNN.....`")
     sleep(1)
     await typew.edit("`SUULLLLLLTTTAAAANN!!`")
     sleep(1)
@@ -107,7 +108,7 @@ async def typewriter(typew):
     await typew.edit("`🏃                       👩‍🦽`")
     await typew.edit("`🏃                      👩‍🦽`")
     await typew.edit("`🏃                     👩‍🦽`")
-    await typew.edit("`🏃   `KEJAR`          👩‍🦽`")
+    await typew.edit("`🏃 `KEJAR SULTANNYA`  👩‍🦽`")
     await typew.edit("`🏃                   👩‍🦽`")
     await typew.edit("`🏃                  👩‍🦽`")
     await typew.edit("`🏃                 👩‍🦽`")
@@ -158,14 +159,23 @@ async def typewriter(typew):
 async def koc(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit("`KAMIII ADALAHHH AVANGERS FAMILY`")
+        sleep(1)
         await e.edit("`SEPEEERTIIIII INILAH FAMILY KAMIIIII`")
+        sleep(1)
         await e.edit("`BERBAGAI BENTUK WATAK ORANGNYA`")
+        sleep(1)
         await e.edit("`ADA YANG LUCU`")
+        sleep(1)
         await e.edit("`ADA PULA MACAM BABIIII`")
+        sleep(1)
         await e.edit("`WALAAUUUU BEGITU KAMI SELALU KOMPAK`")
+        sleep(1)
         await e.edit("`KALAU GABUUTTTT`")
+        sleep(1)
         await e.edit("`PALING NGERUSUH`")
+        sleep(1)
         await e.edit("`ITULAH KAMI PARA AVENGERS`")
+        sleep(1)
         await e.edit("🙈🙈🙈🙈")
         await e.edit("🙉🙉🙉🙉")
         await e.edit("🙈🙈🙈🙈")
@@ -425,6 +435,8 @@ async def typewriter(typew):
     await typew.edit("`Tambah Aja 5000 Dapat 2jam lagi`")
     sleep(1)
     await typew.edit("`wkwkwk becanda gess`")
+    sleep(1)
+    await typew.edit("`-TAMAT GES-`")
 
 
 # Create by myself @localheart
@@ -433,7 +445,7 @@ async def typewriter(typew):
 @register(outgoing=True, pattern=r"^\.mf$")
 async def koc(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
-        await e.edit("`mf g dl` **ミ(ノ;_ _)ノ=3** ")
+        await e.edit("`maaf g dl` **ミ(ノ;_ _)ノ=3** ")
 
 
 @bot.on(events.NewMessage(pattern=r"\.(.*)", outgoing=True))
