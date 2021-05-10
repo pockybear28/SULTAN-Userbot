@@ -1,7 +1,7 @@
 <p align="center">
-    <a href="https://app.codacy.com/gh/mrismanaziz/Man-Userbot/dashboard"> <img src="https://img.shields.io/codacy/grade/a8f0747a964e4712818a28d2a7f4edd3?color=blue&logo=codacy&style=for-the-badge" alt="Codacy" /></a>
-    <a href="https://github.com/pockybear28/Man-Userbot"> <img src="https://img.shields.io/github/repo-size/mrismanaziz/Man-Userbot?logo=github&style=for-the-badge" /></a>
-    <a href="https://github.com/pockybear28/Man-Userbot/network/members"> <img src="https://img.shields.io/github/forks/mrismanaziz/Man-Userbot?logo=github&style=for-the-badge" /></a>
+    <a href="https://app.codacy.com/gh/pockybear28/SULTAN-Userbot/dashboard"> <img src="https://img.shields.io/codacy/grade/a8f0747a964e4712818a28d2a7f4edd3?color=blue&logo=codacy&style=for-the-badge" alt="Codacy" /></a>
+    <a href="https://github.com/pockybear28/SULTAN-Userbot"> <img src="https://img.shields.io/github/repo-size/pockybear28/SULTAN-Userbot?logo=github&style=for-the-badge" /></a>
+    <a href="https://github.com/pockybear28/SULTAN-Userbot/network/members"> <img src="https://img.shields.io/github/forks/pockybear28/SULTAN-Userbot?logo=github&style=for-the-badge" /></a>
     <a href="https://pypi.org/project/Telethon/"> <img src="https://img.shields.io/pypi/v/telethon?label=telethon&logo=pypi&logoColor=white&style=for-the-badge" /></a>
     <img alt="PYTHON" src="https://img.shields.io/badge/PYTHON-v3.9.0-blue?style=for-the-badge&logo=appveyor"/>
    </p>
@@ -26,14 +26,14 @@
     I will be rolling on the floor laughing at you.
 /**
 ```
-### Repo Man-UserBot
+### Repo SULTAN-UserBot
 Repo Yang Dibuat Berbagai Repo Userbot Github dan di Recode Oleh [Sultan](https://t.me/suppnigga)
 
 ## Generate String Session
 
 ### Run on repl.it
 
-Gabung Ke [Grup Support](https://t.me/sharinguserbot) Man-UserBot Lalu Ketik #string [TEKAN DISINI](https://t.me/sharinguserbot) Untuk Masuk Ke [Grup Support](https://t.me/sharinguserbot)
+Gabung Ke [Grup Support](https://t.me/telefriendsgc) SULTAN-UserBot Lalu Ketik #string [TEKAN DISINI](https://t.me/GeezStringRobot) Untuk Masuk Ke [Grup Support](https://t.me/kitaadalahavenger)
 <br>
 
 ## Cara Deploy 👷
@@ -55,7 +55,7 @@ Gabung Ke [Grup Support](https://t.me/sharinguserbot) Man-UserBot Lalu Ketik #st
 ## <p align="center">Deploy to Heroku Methods</p>
 
 
-<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/mrismanaziz/Man-Userbot"> <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-blue?style=flat&logo=heroku" width="210" height="34.45" /></a></p>
+<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/pockybear28/SULTAN-Userbot"> <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-blue?style=flat&logo=heroku" width="210" height="34.45" /></a></p>
 
 <br>
 
@@ -75,5 +75,5 @@ Gabung Ke [Grup Support](https://t.me/sharinguserbot) Man-UserBot Lalu Ketik #st
 *   [Kampang-Bot](https://github.com/ManusiaRakitan/Kampang-Bot) - Koala
 *   [X-REMIX](https://github.com/ximfine) -  X_ImFine
 *   [Man-Userbot](https://github.com/mrismanaziz/Man-Userbot) -  Risman
-*   [Sultan](https://github.com/pockybear28/Man-Userbot) - Sultan
+*   [Sultan](https://github.com/pockybear28/SULTAN-Userbot) - Sultan
 *   AND OTHER
