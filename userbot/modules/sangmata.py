@@ -13,7 +13,7 @@ from userbot import CMD_HELP, bot
 from userbot.events import register
 
 
-@register(outgoing=True, pattern=r"^\.sg(?: |$)(.*)")
+@register(outgoing=True, pattern=r"^\.sa(?: |$)(.*)")
 async def lastname(steal):
     if steal.fwd_from:
         return
@@ -65,7 +65,7 @@ async def lastname(steal):
 CMD_HELP.update(
     {
         "sangmata": "**Plugin : **`sangmata`\
-        \n\n  •  **Syntax :** `.sg` <sambil reply chat usernya>\
+        \n\n  •  **Syntax :** `.sa` <sambil reply chat usernya>\
         \n  •  **Function : **Mendapatkan Riwayat Nama Pengguna selama di telegram.\
     "
     }
