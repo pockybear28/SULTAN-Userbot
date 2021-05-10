@@ -159,8 +159,8 @@ async def koc(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit("`KAMIII ADALAHHH AVANGERS FAMILY`")
         await e.edit("`SEPEEERTIIIII INILAH FAMILY KAMIIIII`")
-        await e.edit("`BERBAGAI BENTUK WATAK ORANGNYA
-        await e.edit("`ADA YANG LUCU `")
+        await e.edit("`BERBAGAI BENTUK WATAK ORANGNYA`")
+        await e.edit("`ADA YANG LUCU`")
         await e.edit("`ADA PULA MACAM BABIIII`")
         await e.edit("`WALAAUUUU BEGITU KAMI SELALU KOMPAK`")
         await e.edit("`KALAU GABUUTTTT`")
