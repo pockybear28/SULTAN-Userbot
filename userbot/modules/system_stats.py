@@ -242,9 +242,9 @@ async def amireallyalive(alive):
         f"┣ ✥ `Modules  : `{len(modules)} \n"
         f"┣ ✥ `Uptime   : `{uptime} \n"
         f"┗━━━━━━━━━━━━━━━━ \n"
-        f"⚡️ **Repo Userbot :** [Man-Userbot](https://github.com/mrismanaziz/Man-Userbot) \n"
-        f"⚡️ **Grup Userbot :** [Tekan Disini](https://t.me/sharinguserbot) \n"
-        f"⚡️ **Owner :** [Risman](t.me/mrismanaziz) \n"
+        f"⚡️ **Repo Userbot :** [SULTAN-Userbot](https://github.com/pockybear28/Man-Userbot) \n"
+        f"⚡️ **Grup Userbot :** [Tekan Disini](https://t.me/telefriendsgc) \n"
+        f"⚡️ **Owner :** [SULTAN](t.me/suppnigga) \n"
     )
     if ALIVE_LOGO:
         try:
@@ -310,7 +310,7 @@ async def amireallyalive(alive):
     await bot.get_me()
     uptime = await get_readable_time((time.time() - StartTime))
     output = (
-        f"**[Man-Userbot](https://github.com/mrismanaziz/Man-Userbot) is Up and Running.**\n\n"
+        f"**[SULTAN-Userbot](https://github.com/pockybear28/Man-Userbot) is Up and Running.**\n\n"
         f"__**{ALIVE_TEKS_CUSTOM}**__\n\n"
         f"{ALIVE_EMOJI} **Master :** `{DEFAULTUSER}` \n"
         f"{ALIVE_EMOJI} **Modules :** `{len(modules)} Modules` \n"
@@ -318,7 +318,7 @@ async def amireallyalive(alive):
         f"{ALIVE_EMOJI} **Python Version :** `{python_version()}` \n"
         f"{ALIVE_EMOJI} **Telethon Version :** `{version.__version__}` \n"
         f"{ALIVE_EMOJI} **Bot Uptime :** `{uptime}` \n\n"
-        "    **[𝗦𝘂𝗽𝗽𝗼𝗿𝘁](https://t.me/sharinguserbot)** | **[𝗖𝗵𝗮𝗻𝗻𝗲𝗹](https://t.me/Lunatic0de)** | **[𝗢𝘄𝗻𝗲𝗿](t.me/mrismanaziz)**"
+        "    **[𝗦𝘂𝗽𝗽𝗼𝗿𝘁](https://t.me/telefriendsgc)** | **[𝗜𝗻𝘀𝘁𝗮𝗴𝗿𝗮𝗺](https://instagram.com/pockybear28)** | **[𝗢𝘄𝗻𝗲𝗿](t.me/suppnigga)**"
     )
     if ALIVE_LOGO:
         try:
