@@ -245,6 +245,7 @@ async def amireallyalive(alive):
         f"⚡️ **Repo Userbot :** [SULTAN-Userbot](https://github.com/pockybear28/Man-Userbot) \n"
         f"⚡️ **Grup Userbot :** [Tekan Disini](https://t.me/telefriendsgc) \n"
         f"⚡️ **Owner :** [SULTAN](t.me/suppnigga) \n"
+        f"⚡ **Channel :** [MusicQuotes](t.me/suppmusicquotes) \n"
     )
     if ALIVE_LOGO:
         try:
@@ -318,7 +319,7 @@ async def amireallyalive(alive):
         f"{ALIVE_EMOJI} **Python Version :** `{python_version()}` \n"
         f"{ALIVE_EMOJI} **Telethon Version :** `{version.__version__}` \n"
         f"{ALIVE_EMOJI} **Bot Uptime :** `{uptime}` \n\n"
-        "    **[𝗦𝘂𝗽𝗽𝗼𝗿𝘁](https://t.me/telefriendsgc)** | **[𝗜𝗻𝘀𝘁𝗮𝗴𝗿𝗮𝗺](https://instagram.com/pockybear28)** | **[𝗢𝘄𝗻𝗲𝗿](t.me/suppnigga)**"
+        "    **[𝗦𝘂𝗽𝗽𝗼𝗿𝘁](https://t.me/telefriendsgc)** | **[𝗜𝗻𝘀𝘁𝗮𝗴𝗿𝗮𝗺](https://instagram.com/pockybear28)** | **[𝗢𝘄𝗻𝗲𝗿](t.me/suppnigga)** | **[𝗖𝗵𝗮𝗻𝗻𝗲𝗹](t.me/suppmusicquotes)**"
     )
     if ALIVE_LOGO:
         try:
