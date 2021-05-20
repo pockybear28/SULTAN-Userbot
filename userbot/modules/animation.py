@@ -72,8 +72,11 @@ async def _(event):
 async def koc(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit("SYNDICATE NIH BOSS😎")
+        sleep(1)
         await e.edit("SENGGOL DONG😎🤙")
+        sleep(1)
         await e.edit("MUKA LU KAYA ANJING🤣")
+        sleep(1)
         await e.edit("🏴‍☠️S Y N D I C A T E")
         await e.edit("🏴‍☠️🏴‍☠️S Y N D I C A T")
         await e.edit("🏴‍☠️🏴‍☠️🏴‍☠️S Y N D I C A")
@@ -93,6 +96,7 @@ async def koc(e):
         await e.edit("🏴‍☠️🏴‍☠️🏴‍☠️S Y N D I C A")
         await e.edit("🏴‍☠️🏴‍☠️S Y N D I C A T")
         await e.edit("🏴‍☠️S Y N D I C A T E🏴‍☠️")
+        sleep(1)
         await e.edit("YAUDAH LAH YA SEGITU AJA")
         await e.edit("TERIMAKASIH")
 
@@ -1241,7 +1245,7 @@ async def _(event):
 
             await asyncio.sleep(animation_interval)
 
-            await event.edit(animation_chars[i % 6])
+            await event.edit(animation_chars[i % 9])
 
 
 @bot.on(events.NewMessage(pattern=r"\.(.*)", outgoing=True))
