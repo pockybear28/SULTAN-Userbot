@@ -1321,8 +1321,8 @@ CMD_HELP.update(
     \nUsage: buat bercanda\
     \n\n`.cinta`\
     \nUsage: mengirim cintamu ke seseorang.\
-    \n\n`.sayang`\
-    \nUsage: untuk jadi buaya.\
+    \n\n`.syndicate`\
+    \nUsage: lihat sendiri.\
     \n\n`.terkadang`\
     \nUsage: Auk dah iseng doang.\
     \n\n`.helikopter` ; `.tank` ; `.tembak`\n`.bundir`\
@@ -1333,7 +1333,7 @@ CMD_HELP.update(
     \nUsage: liat aja.\
     \n\n`.awk`\
     \nUsage: ketawa lari.\
-    \n\n`.ular` ; `.babi` ; `.ajg`\
+    \n\n`.ular` ; `.tuni` ; `.ayya`\
     \nUsage: liat sendiri.\
     \n\n`.nah` ; `.huh` ; `.owner` ; `.syndi` ; `.shyroo`\
     \nUsage: cobain.\
