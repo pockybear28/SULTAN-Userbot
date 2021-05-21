@@ -74,22 +74,22 @@ async def sleepybot(time):
 @register(outgoing=True, pattern=r"^\.shutdown$")
 async def killdabot(event):
     """For .shutdown command, shut the bot down."""
-    await event.edit("`Mematikan Man-Userbot....`")
+    await event.edit("`Mematikan SULTAN-Userbot....`")
     await asyncio.sleep(7)
     await event.delete()
     if BOTLOG:
         await event.client.send_message(
-            BOTLOG_CHATID, "#SHUTDOWN \n" "**Userbot Telah Dimatikan**"
+            BOTLOG_CHATID, "#SHUTDOWN \n" "**SULTAN-Userbot Telah Dimatikan**"
         )
     await bot.disconnect()
 
 
 @register(outgoing=True, pattern=r"^\.restart$")
 async def killdabot(event):
-    await event.edit("`Restarting Man-Userbot...`")
+    await event.edit("`Restarting SULTAN-Userbot...`")
     if BOTLOG:
         await event.client.send_message(
-            BOTLOG_CHATID, "#RESTARTBOT \n" "**Man-Userbot Telah Di Restart**"
+            BOTLOG_CHATID, "#RESTARTBOT \n" "**SULTAN-Userbot Telah Di Restart**"
         )
     # Spin a new instance of bot
     args = [sys.executable, "-m", "userbot"]
@@ -100,8 +100,8 @@ async def killdabot(event):
 async def reedme(e):
     await e.edit(
         "Here's something for you to read :\n"
-        "\n[Userbot Repo](https://github.com/mrismanaziz/Man-Userbot/blob/Man-Userbot/README.md)"
-        "\n[Setup Guide - Basic](https://telegra.ph/How-to-host-a-Telegram-Userbot-11-02)"
+        "\n[Userbot Repo](https://github.com/pockybear28/SULTAN-Userbot/blob/SULTAN-Userbot/README.md)"
+        "\n[Setup Guide - Basic](https://telegra.ph/TUTORIAL-BIKIN-BOT-05-21)"
         "\n[Setup Guide - Google Drive](https://telegra.ph/How-To-Setup-GDrive-11-02)"
         "\n[Setup Guide - LastFM Module](https://telegra.ph/How-to-set-up-LastFM-module-for-Paperplane-userbot-11-02)"
         "\n[Video Tutorial - 576p](https://mega.nz/#!ErwCESbJ!1ZvYAKdTEfb6y1FnqqiLhHH9vZg4UB2QZNYL9fbQ9vs)"
@@ -128,12 +128,12 @@ async def repeat(rep):
 async def repo_is_here(wannasee):
     """For .repo command, just returns the repo URL."""
     await wannasee.edit(
-        f"**Hey**, __I am using__ 🔥 **Man-Userbot** 🔥\n\n"
+        f"**Hey**, __I am using__ 🔥 **SULTAN-Userbot** 🔥\n\n"
         f"      __Thanks For Using me__\n\n"
         f"✣ **Userbot Version :** `{BOT_VER}@{UPSTREAM_REPO_BRANCH}`\n"
-        f"✣ **Group Support :** [Sharing Userbot](t.me/sharinguserbot)\n"
-        f"✣ **Owner Repo :** [Risman](t.me/mrismanaziz)\n"
-        f"✣ **Repo :** [Man-Userbot](https://github.com/mrismanaziz/Man-Userbot)\n"
+        f"✣ **Group Support :** [Sharing Userbot](t.me/userbotmaker)\n"
+        f"✣ **Owner Repo :** [SULTAN](t.me/suppnigga)\n"
+        f"✣ **Repo :** [SULTAN-Userbot](https://github.com/pockybear28/SULTAN-Userbot)\n"
     )
 
 
@@ -141,7 +141,7 @@ async def repo_is_here(wannasee):
 async def repo_is_here(wannasee):
     """For .repo command, just returns the repo URL."""
     await wannasee.edit(
-        f"✥ **GET STRING SESSION TELEGRAM :** [KLIK DISINI](https://t.me/sharinguserbot) Terus ketik #string\n"
+        f"✥ **GET STRING SESSION TELEGRAM :** [KLIK DISINI](https://t.me/userbotmaker) Terus ketik #string\n"
     )
 
 
@@ -326,7 +326,7 @@ CMD_HELP.update(
     {
         "sleep": "**Plugin : **`sleep`\
         \n\n  •  **Syntax :** `.sleep`\
-        \n  •  **Function : **Biarkan Man-Userbot tidur selama beberapa detik \
+        \n  •  **Function : **Biarkan SULTAN-Userbot tidur selama beberapa detik \
     "
     }
 )
@@ -334,11 +334,11 @@ CMD_HELP.update(
 
 CMD_HELP.update(
     {
-        "repo": "**Plugin : **`Repository Man-Userbot`\
+        "repo": "**Plugin : **`Repository SULTAN-Userbot`\
         \n\n  •  **Syntax :** `.repo`\
-        \n  •  **Function : **Menampilan link Repository Man-Userbot\
+        \n  •  **Function : **Menampilan link Repository SULTAN-Userbot\
         \n\n  •  **Syntax :** `.string`\
-        \n  •  **Function : **Menampilan link String Man-Userbot\
+        \n  •  **Function : **Menampilan link String SULTAN-Userbot\
     "
     }
 )
@@ -356,7 +356,7 @@ CMD_HELP.update(
 
 CMD_HELP.update(
     {
-        "restart": "**Plugin : **`Restart Man-Userbot`\
+        "restart": "**Plugin : **`Restart SULTAN-Userbot`\
         \n\n  •  **Syntax :** `.restart`\
         \n  •  **Function : **Untuk Merestart userbot.\
     "
