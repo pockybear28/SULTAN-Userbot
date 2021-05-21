@@ -51,10 +51,10 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
                 break
         if heroku_app is None:
             await event.edit(
-                f"{txt}\n`Kredensial Heroku tidak valid untuk deploy Man-Userbot dyno.`"
+                f"{txt}\n`Kredensial Heroku tidak valid untuk deploy SULTAN-Userbot dyno.`"
             )
             return repo.__del__()
-        await event.edit("`[HEROKU]: Update Deploy Man-Userbot Sedang Dalam Proses...`")
+        await event.edit("`[HEROKU]: Update Deploy SULTAN-Userbot Sedang Dalam Proses...`")
         ups_rem.fetch(ac_br)
         repo.git.reset("--hard", "FETCH_HEAD")
         heroku_git_url = heroku_app.git_url.replace(
@@ -79,14 +79,14 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
             return await event.delete()
         else:
             await event.edit(
-                "`Man-Userbot Berhasil Di Deploy! Userbot bisa di gunakan kembali.`"
+                "`SULTAN-Userbot Berhasil Di Deploy! Userbot bisa di gunakan kembali.`"
             )
             await asyncio.sleep(15)
             await event.delete()
 
         if BOTLOG:
             await event.client.send_message(
-                BOTLOG_CHATID, "#BOT \n" "**Man-Userbot Berhasil Di Update**"
+                BOTLOG_CHATID, "#BOT \n" "**SULTAN-Userbot Berhasil Di Update**"
             )
 
     else:
@@ -101,9 +101,9 @@ async def update(event, repo, ups_rem, ac_br):
         ups_rem.pull(ac_br)
     except GitCommandError:
         repo.git.reset("--hard", "FETCH_HEAD")
-    await event.edit("**✥ Man-Userbot** `Berhasil Di Update!`")
+    await event.edit("**✥ SULTAN-Userbot** `Berhasil Di Update!`")
     await asyncio.sleep(1)
-    await event.edit("**✥ Man-Userbot** `Sedang di Restart....`")
+    await event.edit("**✥ SULTAN-Userbot** `Sedang di Restart....`")
     await asyncio.sleep(1)
     await event.edit("`Tunggu Beberapa Detik `")
     await asyncio.sleep(10)
@@ -111,7 +111,7 @@ async def update(event, repo, ups_rem, ac_br):
 
     if BOTLOG:
         await event.client.send_message(
-            BOTLOG_CHATID, "#BOT \n" "**Man-Userbot Sedang Di Perbarui**"
+            BOTLOG_CHATID, "#BOT \n" "**SULTAN-Userbot Sedang Di Perbarui**"
         )
         await asyncio.sleep(100)
         await event.delete()
@@ -173,13 +173,13 @@ async def upstream(event):
     changelog = await gen_chlog(repo, f"HEAD..upstream/{ac_br}")
 
     if changelog == "" and force_update is False:
-        await event.edit(f"\n**✥ Man-Userbot Sudah Versi Terbaru**\n")
+        await event.edit(f"\n**✥ SULTAN-Userbot Sudah Versi Terbaru**\n")
         await asyncio.sleep(15)
         await event.delete()
         return repo.__del__()
 
     if conf is None and force_update is False:
-        changelog_str = f"**✥ Pembaruan Untuk Man-Userbot [{ac_br}] :\n\n✥ Pembaruan:**\n`{changelog}`"
+        changelog_str = f"**✥ Pembaruan Untuk SULTAN-Userbot [{ac_br}] :\n\n✥ Pembaruan:**\n`{changelog}`"
         if len(changelog_str) > 4096:
             await event.edit("`Changelog Terlalu Besar, Buka File Untuk Melihatnya.`")
             file = open("output.txt", "w+")
@@ -194,7 +194,7 @@ async def upstream(event):
         else:
             await event.edit(changelog_str)
         return await event.respond(
-            "✥ **Perintah Untuk Update Man-Userbot**\n ›`.update now`\n ›`.update deploy`\n\n__Untuk Meng Update Fitur Terbaru Dari Man-Userbot.__"
+            "✥ **Perintah Untuk Update SULTAN-Userbot**\n ›`.update now`\n ›`.update deploy`\n\n__Untuk Meng Update Fitur Terbaru Dari SULTAN-Userbot.__"
         )
 
     if force_update:
@@ -202,13 +202,13 @@ async def upstream(event):
             "`Sinkronisasi Paksa Ke Kode Userbot Stabil Terbaru, Harap Tunggu .....`"
         )
     else:
-        await event.edit("`✣ Proses Update Man-Userbot, Loading....1%`")
-        await event.edit("`✣ Proses Update Man-Userbot, Loading....12%`")
-        await event.edit("`✣ Proses Update Man-Userbot, Loading....25%`")
-        await event.edit("`✣ Proses Update Man-Userbot, Loading....46%`")
-        await event.edit("`✣ Proses Update Man-Userbot, Loading....76%`")
-        await event.edit("`✣ Proses Update Man-Userbot, Updating...92%`")
-        await event.edit("`✣ Proses Update Man-Userbot, Tunggu Sebentar....100%`")
+        await event.edit("`✣ Proses Update SULTAN-Userbot, Loading....1%`")
+        await event.edit("`✣ Proses Update SULTAN-Userbot, Loading....12%`")
+        await event.edit("`✣ Proses Update SULTAN-Userbot, Loading....25%`")
+        await event.edit("`✣ Proses Update SULTAN-Userbot, Loading....46%`")
+        await event.edit("`✣ Proses Update SULTAN-Userbot, Loading....76%`")
+        await event.edit("`✣ Proses Update SULTAN-Userbot, Updating...92%`")
+        await event.edit("`✣ Proses Update SULTAN-Userbot, Tunggu Sebentar....100%`")
     if conf == "now":
         if changelog != "":
             for commit in changelog.splitlines():
@@ -230,11 +230,11 @@ CMD_HELP.update(
     {
         "update": "**Plugin : **`update`\
         \n\n  •  **Syntax :** `.update`\
-        \n  •  **Function : **Untuk Melihat Pembaruan Terbaru Man-Userbot.\
+        \n  •  **Function : **Untuk Melihat Pembaruan Terbaru SULTAN-Userbot.\
         \n\n  •  **Syntax :** `.update now`\
-        \n  •  **Function : **Memperbarui Man-Userbot.\
+        \n  •  **Function : **Memperbarui SULTAN-Userbot.\
         \n\n  •  **Syntax :** `.update deploy`\
-        \n  •  **Function : **Memperbarui Man-Userbot Dengan Cara Deploy Ulang.\
+        \n  •  **Function : **Memperbarui SULTAN-Userbot Dengan Cara Deploy Ulang.\
     "
     }
 )
