@@ -27,8 +27,8 @@ async def _(event):
         animation_chars = [
             "Assalamualaikum, kami adalah avengers",
             "Mari berkenalan yaitu :",
-            "Aladdin si om ganteng",
-            "Achong si cina sesat",
+            "PIKACHU si om ganteng",
+            "LETNAN si cina sesat",
             "Andre si maska botak",
             "Malika kedelai hitam pilihan",
             "Arjen si kang TMO",
@@ -518,12 +518,12 @@ async def typewriter(typew):
 # Create by myself @localheart
 
 
-@register(outgoing=True, pattern=r"^\.helikopter(?: |$)(.*)")
+@register(outgoing=True, pattern=r"^\.opmem(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit(
-        "▬▬▬.◙.▬▬▬ \n"
-        "═▂▄▄▓▄▄▂ \n"
+        "Syndicate Familliam OPEN MEMBER!! \n"
+        "Yang mau join bisa PC Member/Owner Syndicate \n"
         "◢◤ █▀▀████▄▄▄▄◢◤ \n"
         "█▄ █ █▄ ███▀▀▀▀▀▀▀╬ \n"
         "◥█████◤ \n"
