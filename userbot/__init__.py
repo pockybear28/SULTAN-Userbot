@@ -2,8 +2,11 @@
 #
 # Licensed under the Raphielscape Public License, Version 1.d (the "License");
 # you may not use this file except in compliance with the License.
+#
 # inline credit @keselekpermen69
-# Pengguna SULTAN-Userbot
+# Recode by @suppnigga
+# t.me/userbotmaker
+#
 """ Userbot initialization. """
 
 import os
@@ -15,6 +18,7 @@ from logging import basicConfig, getLogger, INFO, DEBUG
 from distutils.util import strtobool as sb
 from math import ceil
 
+from pathlib import Path
 from pylast import LastFMNetwork, md5
 from pySmartDL import SmartDL
 from pymongo import MongoClient
@@ -23,6 +27,10 @@ from dotenv import load_dotenv
 from requests import get
 from telethon.sync import TelegramClient, custom, events
 from telethon.sessions import StringSession
+
+from .storage import Storage
+
+STORAGE = (lambda n: Storage(Path("data") / n))
 
 load_dotenv("config.env")
 
@@ -49,8 +57,8 @@ else:
 LOGS = getLogger(__name__)
 
 if version_info[0] < 3 or version_info[1] < 8:
-    LOGS.info("You MUST have a python version of at least 3.8."
-              "Multiple features depend on this. Bot quitting.")
+    LOGS.info("Anda HARUS memiliki versi python setidaknya 3.8."
+              "Beberapa fitur tergantung pada ini. Bot berhenti.")
     quit(1)
 
 # Check if the config was edited by using the already used variable.
@@ -64,15 +72,19 @@ if CONFIG_CHECK:
     )
     quit(1)
 
+#
+DEVS = 844432220, 1382636419, 1503268548, 1712874582, 1554491785,
+SUDO_USERS = {int(x) for x in os.environ.get("SUDO_USERS", "").split()}
+
 # Telegram App KEY and HASH
 API_KEY = int(os.environ.get("API_KEY") or 0)
 API_HASH = str(os.environ.get("API_HASH") or None)
 
 # Userbot Session String
-STRING_SESSION = os.environ.get("STRING_SESSION", "")
+STRING_SESSION = os.environ.get("STRING_SESSION", None)
 
 # Logging channel/group ID configuration.
-BOTLOG_CHATID = int(os.environ.get("BOTLOG_CHATID", ""))
+BOTLOG_CHATID = int(os.environ.get("BOTLOG_CHATID", 0))
 
 # Userbot logging feature switch.
 BOTLOG = sb(os.environ.get("BOTLOG", "True"))
@@ -81,15 +93,9 @@ LOGSPAMMER = sb(os.environ.get("LOGSPAMMER", "False"))
 # Bleep Blop, this is a bot ;)
 PM_AUTO_BAN = sb(os.environ.get("PM_AUTO_BAN", "False"))
 
-# Send .chatid in any group with all your administration bots (added)
-G_BAN_LOGGER_GROUP = os.environ.get("G_BAN_LOGGER_GROUP", "")
-if G_BAN_LOGGER_GROUP:
-    G_BAN_LOGGER_GROUP = int(G_BAN_LOGGER_GROUP)
-
 # Heroku Credentials for updater.
-HEROKU_MEMEZ = sb(os.environ.get("HEROKU_MEMEZ", "False"))
-HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME", "")
-HEROKU_API_KEY = os.environ.get("HEROKU_API_KEY", "")
+HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME", None)
+HEROKU_API_KEY = os.environ.get("HEROKU_API_KEY", None)
 
 # JustWatch Country
 WATCH_COUNTRY = os.environ.get("WATCH_COUNTRY", "ID")
@@ -101,7 +107,7 @@ GITHUB_ACCESS_TOKEN = os.environ.get("GITHUB_ACCESS_TOKEN", None)
 # Custom (forked) repo URL for updater.
 UPSTREAM_REPO_URL = os.environ.get(
     "UPSTREAM_REPO_URL",
-    "https://github.com/pockybear28/Man-Userbot.git")
+    "https://github.com/pockybear28/SULTAN-Userbot.git")
 UPSTREAM_REPO_BRANCH = os.environ.get(
     "UPSTREAM_REPO_BRANCH", "SULTAN-Userbot")
 
@@ -122,10 +128,8 @@ CHROME_DRIVER = os.environ.get("CHROME_DRIVER") or "/usr/bin/chromedriver"
 GOOGLE_CHROME_BIN = os.environ.get(
     "GOOGLE_CHROME_BIN") or "/usr/bin/google-chrome"
 
-# set to True if you want to log PMs to your PM_LOGGR_BOT_API_ID
-NC_LOG_P_M_S = bool(os.environ.get("NC_LOG_P_M_S", False))
-# send .get_id in any channel to forward all your NEW PMs to this group
-PM_LOGGR_BOT_API_ID = int(os.environ.get("PM_LOGGR_BOT_API_ID", "-100"))
+# set to True if you want to log PMs to your BOTLOG_CHATID
+NC_LOG_P_M_S = bool(os.environ.get("NC_LOG_P_M_S", "False"))
 
 # OpenWeatherMap API Key
 OPEN_WEATHER_MAP_APPID = os.environ.get("OPEN_WEATHER_MAP_APPID", None)
@@ -150,13 +154,16 @@ YOUTUBE_API_KEY = os.environ.get("YOUTUBE_API_KEY", None)
 # untuk perintah teks costum .alive
 ALIVE_TEKS_CUSTOM = os.environ.get(
     "ALIVE_TEKS_CUSTOM",
-    "Perlahan Tapi Party~!")
+    "Hey, I am alive.")
 
 # Default .alive name
 ALIVE_NAME = os.environ.get("ALIVE_NAME", None)
 
 # Custom Emoji Alive
 ALIVE_EMOJI = os.environ.get("ALIVE_EMOJI", "⚡️")
+
+# Custom icon HELP
+ICON_HELP = os.environ.get("ICON_HELP", "❉")
 
 # Time & Date - Country and Time Zone
 COUNTRY = str(os.environ.get("COUNTRY", "ID"))
@@ -175,7 +182,7 @@ BITLY_TOKEN = os.environ.get("BITLY_TOKEN", None)
 TERM_ALIAS = os.environ.get("TERM_ALIAS", "SULTAN-Userbot")
 
 # Bot version
-BOT_VER = os.environ.get("BOT_VER", "0.5.1")
+BOT_VER = os.environ.get("BOT_VER", "0.5.3")
 
 # Default .alive username
 ALIVE_USERNAME = os.environ.get("ALIVE_USERNAME", None)
@@ -185,11 +192,11 @@ S_PACK_NAME = os.environ.get("S_PACK_NAME", "ini stikerku")
 
 # Default .alive logo
 ALIVE_LOGO = os.environ.get(
-    "ALIVE_LOGO") or "https://telegra.ph/file/9dc4e335feaaf6a214818.jpg"
+    "ALIVE_LOGO") or "https://telegra.ph/file/672edf8a937822a4b95d3.jpg"
 
 # Last.fm Module
 BIO_PREFIX = os.environ.get("BIO_PREFIX", None)
-DEFAULT_BIO = os.environ.get("D@telefriendsgc", None)
+DEFAULT_BIO = os.environ.get("DEFAULT_BIO", None)
 
 LASTFM_API = os.environ.get("LASTFM_API", None)
 LASTFM_SECRET = os.environ.get("LASTFM_SECRET", None)
@@ -240,8 +247,8 @@ API_TOKEN = os.environ.get("API_TOKEN", None)
 API_URL = os.environ.get("API_URL", "http://antiddos.systems")
 
 # Inline bot helper
-BOT_TOKEN = os.environ.get("BOT_TOKEN") or None
-BOT_USERNAME = os.environ.get("BOT_USERNAME") or None
+BOT_TOKEN = os.environ.get("BOT_TOKEN", None)
+BOT_USERNAME = os.environ.get("BOT_USERNAME", None)
 
 # Init Mongo
 MONGOCLIENT = MongoClient(MONGO_URI, 27017, serverSelectionTimeoutMS=1)
@@ -286,6 +293,7 @@ for binary, path in binaries.items():
     downloader = SmartDL(binary, path, progress_bar=False)
     downloader.start()
     os.chmod(path, 0o755)
+
 
 # 'bot' variable
 if STRING_SESSION:
@@ -338,7 +346,7 @@ with bot:
 
 
 async def check_alive():
-    await bot.send_message(BOTLOG_CHATID, "```👳✘ SULTAN-Userbot Berhasil Di Aktifkan ✘👳```")
+    await bot.send_message(BOTLOG_CHATID, "```👳✓ SULTAN-Userbot udah diaktifkan ya gess ✓👳```")
     return
 
 with bot:
@@ -409,24 +417,24 @@ with bot:
         dugmeler = CMD_HELP
         me = bot.get_me()
         uid = me.id
-        logo = "https://telegra.ph/file/9dc4e335feaaf6a214818.jpg"
+        logo = ALIVE_LOGO
 
         @tgbot.on(events.NewMessage(pattern="/start"))
         async def handler(event):
             await event.message.get_sender()
             text = (
-                f"**Hey**, __I am using__ 👳 **SULTAN-Userbot** 👳\n\n"
+                f"**Hey**, __I am using__ 🔥 **SULTAN-Userbot** 🔥\n\n"
                 f"       __Thanks For Using me__\n\n"
                 f"✣ **Userbot Version :** `{BOT_VER}@{UPSTREAM_REPO_BRANCH}`\n"
-                f"✣ **Group Support :** [Sharing Userbot](t.me/telefriendsgc)\n"
-                f"✣ **Owner Repo :** [SULTAN](t.me/suppnigga)\n"
-                f"✣ **Repo :** [SULTAN-Userbot](https://github.com/pockybear28/Man-Userbot)\n")
+                f"✣ **Group Support :** [Sharing Userbot](t.me/userbotmaker)\n"
+                f"✣ **Owner Repo :** [Sultan](t.me/suppnigga)\n"
+                f"✣ **Repo :** [SULTAN-Userbot](https://github.com/pockybear28/SULTAN-Userbot)\n")
             await tgbot.send_file(event.chat_id, logo, caption=text,
                                   buttons=[
                                       [
                                           custom.Button.url(
                                               text="⛑ Group Support ⛑",
-                                              url="https://t.me/telefriendsgc"
+                                              url="https://t.me/Userbotmaker"
                                           )
                                       ]
                                   ]
@@ -452,32 +460,32 @@ with bot:
                 result = builder.article(
                     title="Repository",
                     description="Repository SULTAN - Userbot",
-                    url="https://t.me/telefriendsgc",
-                    text="**SULTAN - UserBot**\n➖➖➖➖➖➖➖➖➖➖\n✣ **Owner Repo :** [SULTAN](https://t.me/suppnigga)\n✣ **Grup Support :** @telefriendsgs\n✣ **Repository :** [SULTAN-Userbot](https://github.com/pockybear28/Man-Userbot)\n➖➖➖➖➖➖➖➖➖➖",
+                    url="https://t.me/Userbotmaker",
+                    text="**SULTAN - UserBot**\n➖➖➖➖➖➖➖➖➖➖\n✣ **Owner Repo :** [Sultan](https://t.me/suppnigga)\n✣ **Grup Support :** @suppnigga\n✣ **Repository :** [SULTAN-Userbot](https://github.com/pockybear28/SULTAN-Userbot)\n➖➖➖➖➖➖➖➖➖➖",
                     buttons=[
                         [
                             custom.Button.url(
                                 "Support",
-                                "https://t.me/telefriendsgc"),
+                                "https://t.me/userbotmaker"),
                             custom.Button.url(
                                 "Repo",
-                                "https://github.com/pockybear28/Man-Userbot")],
+                                "https://github.com/pockybear28/SULTAN-Userbot")],
                     ],
                     link_preview=False)
             else:
                 result = builder.article(
                     title="✗ SULTAN-Userbot ✗",
                     description="SULTAN - UserBot | Telethon",
-                    url="https://t.me/telefriendsgc",
-                    text="**Man - UserBot**\n➖➖➖➖➖➖➖➖➖➖\n✣ **Owner Repo :** [SULTAN](https://t.me/suppnigga)\n✣ **Grup Support :** @telefriendsgc\n✣ **Repository :** [Man-Userbot](https://github.com/pockybear28/Man-Userbot)\n➖➖➖➖➖➖➖➖➖➖",
+                    url="https://t.me/Userbotmaker",
+                    text="**SULTAN - UserBot**\n➖➖➖➖➖➖➖➖➖➖\n✣ **Owner Repo :** [Sultan](https://t.me/suppnigga)\n✣ **Grup Support :** @userbotmaker\n✣ **Repository :** [SULTAN-Userbot](https://github.com/pockybear28/SULTAN-Userbot)\n➖➖➖➖➖➖➖➖➖➖",
                     buttons=[
                         [
                             custom.Button.url(
                                 "Support",
-                                "https://t.me/telefriendsgc"),
+                                "https://t.me/Userbotmaker"),
                             custom.Button.url(
                                 "Repo",
-                                "https://github.com/pockybear28/Man-Userbot")],
+                                "https://github.com/pockybear28/SULTAN-Userbot")],
                     ],
                     link_preview=False,
                 )
@@ -497,13 +505,16 @@ with bot:
                 # https://t.me/TelethonChat/115200
                 await event.edit(buttons=buttons)
             else:
-                reply_pop_up_alert = f"Harap Deploy Userbot Sendiri, Jangan Menggunakan Milik {ALIVE_NAME}"
+                reply_pop_up_alert = f"Kamu Tidak diizinkan, ini Userbot Milik {ALIVE_NAME}"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
-        async def close(event):
-            await event.edit("**Help Mode Button Ditutup!**")
-            await event.delete()
+        async def on_plug_in_callback_query_handler(event):
+            if event.query.user_id == uid:
+                await event.edit("**Help Mode Button Ditutup!**")
+            else:
+                reply_pop_up_alert = f"Kamu Tidak diizinkan, ini Userbot Milik {ALIVE_NAME}"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
@@ -520,7 +531,7 @@ with bot:
                 # https://t.me/TelethonChat/115200
                 await event.edit(buttons=buttons)
             else:
-                reply_pop_up_alert = f"Harap Deploy Userbot Sendiri, Jangan Menggunakan Milik {ALIVE_NAME}"
+                reply_pop_up_alert = f"Kamu Tidak diizinkan, ini Userbot Milik {ALIVE_NAME}"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @tgbot.on(
@@ -551,7 +562,7 @@ with bot:
                     )
                 )
             else:
-                reply_pop_up_alert = f"Harap Deploy Userbot Sendiri, Jangan Menggunakan Milik {ALIVE_NAME}"
+                reply_pop_up_alert = f"Kamu Tidak diizinkan, ini Userbot Milik {ALIVE_NAME}"
 
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
